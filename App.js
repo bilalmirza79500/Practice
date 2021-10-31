@@ -11,6 +11,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from "./src/screens/Home";
 import Setting from './src/screens/Setting';
+import NewScreen from './src/screens/NewScreen';
+
 const App = () => {
   const Stack = createStackNavigator();
 
@@ -34,6 +36,7 @@ const App = () => {
       <Stack.Navigator initialRouteName ={"Home"}>
         <Stack.Screen name="Home" component={Home} options={{ animationEnabled: false, headerShown: false }}/>
         <Stack.Screen name="Setting" component={Setting} options={{ animationEnabled: false, headerShown: false }} />
+        <Stack.Screen name="NewScreen" component={NewScreen} options={{ animationEnabled: false, headerShown: false }} />
         
       </Stack.Navigator>
     </NavigationContainer>

@@ -21,6 +21,11 @@ const Setting = () =>{
                     Home Screen
                 </Text>
             </TouchableOpacity>
+            <View>
+                <Text>
+                    hallo
+                </Text>
+            </View>
         </View>
     )
 }

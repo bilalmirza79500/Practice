@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
-  
+
 const Home = () => {
     const navigation = useNavigation()
     return (
@@ -42,16 +42,27 @@ const Home = () => {
                     <Text style={styles.text}>7</Text>
                 </View>
             </View>
-            <View>
-                <TouchableOpacity onPress = {() => {
+            <View style={{ flexDirection: "row", alignItems: "center", justifyContent: 'space-between', backgroundColor: "gray" }}>
+                <TouchableOpacity onPress={() => {
 
                     navigation.navigate("Setting")
                 }}>
-                <Text>
-                    Next Screen
-                </Text>
-            </TouchableOpacity>
-        </View>
+                    <Text>
+                        Setting Screen
+                    </Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => {
+
+                    navigation.navigate("NewScreen")
+                }}>
+                    <Text>
+                        New Screen
+                    </Text>
+                </TouchableOpacity>
+            </View>
+            <View>
+
+            </View>
         </View >
     );
 };
