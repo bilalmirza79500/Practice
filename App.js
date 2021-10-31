@@ -7,8 +7,13 @@ import {
   View,
   ScrollView,
 } from 'react-native';
-
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Home from "./src/screens/Home";
+import Setting from './src/screens/Setting';
 const App = () => {
+  const Stack = createStackNavigator();
+
   // 6th lacture
   // const [name, setNmane] = useState('Bilal')
   // const [seccion, setSeccion] = useState({ number: 6, title: 'old state' })
@@ -24,51 +29,32 @@ const App = () => {
   }
 
   return (
-    <View style={styles.body}>
-      <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems:'center'}}>
-      <View style={styles.View1}>
-          <Text style={styles.text}>1</Text>
-        </View>
-        <View style={styles.View2}>
-          <Text style={styles.text}>2</Text>
-        </View>
-        <View style={styles.View3}>
-          <Text style={styles.text}>3</Text>
-        </View>
-      </View>
-      <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch'}}>
-        <View style={styles.View4}>
-          <Text style={styles.text}>4</Text>
-        </View>
-        <View style={styles.View5}>
-          <Text style={styles.text}>5</Text>
-        </View>
-      </View>
-      <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'stretch', }}>
-        <View style={styles.View6}>
-          <Text style={styles.text}>6</Text>
-        </View>
-        <View style={styles.View7}>
-          <Text style={styles.text}>7</Text>
-        </View>
-      </View>
-    </View >
+
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName ={"Home"}>
+        <Stack.Screen name="Home" component={Home} options={{ animationEnabled: false, headerShown: false }}/>
+        <Stack.Screen name="Setting" component={Setting} options={{ animationEnabled: false, headerShown: false }} />
+        
+      </Stack.Navigator>
+    </NavigationContainer>
+
+
   );
 };
 const styles = StyleSheet.create({
   body: {
     flex: 1,
     backgroundColor: 'wheat',
-      // alignItems: 'center',
-      // justifyContent: 'center',
-      borderWidth: 10,
+    // alignItems: 'center',
+    // justifyContent: 'center',
+    borderWidth: 10,
   },
   text: {
     color: 'white',
     fontSize: 20,
     fontStyle: 'italic',
     margin: 10,
-  //   // textTransform: 'uppercase',
+    //   // textTransform: 'uppercase',
   },
   View1: {
     flex: 1,
