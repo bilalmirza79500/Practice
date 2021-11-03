@@ -10,21 +10,31 @@ import {
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from '@react-navigation/native';
 
-const Setting = () =>{
+const Setting = () => {
     const navigation = useNavigation()
-    return(
-        <View style={{flex :1}}>
-            <TouchableOpacity onPress = { () => {
-                navigation.goBack()
-            }}>
-                <Text>
-                    Home Screen
-                </Text>
-            </TouchableOpacity>
+    return (
+        <View style={{ flex: 1 }}>
             <View>
                 <Text>
                     hallo
                 </Text>
+            </View>
+            <View style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: 'center',
+                borderRadius:100,
+                borderWidth:10,
+                backgroundColor: "red"
+            }}>
+                <TouchableOpacity onPress={() => {
+                    navigation.goBack()
+                }}>
+                    <Text>
+                        Home Screen
+                    </Text>
+                </TouchableOpacity>
+
             </View>
         </View>
     )

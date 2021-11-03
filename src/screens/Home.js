@@ -42,7 +42,14 @@ const Home = () => {
                     <Text style={styles.text}>7</Text>
                 </View>
             </View>
-            <View style={{ flexDirection: "row", alignItems: "center", justifyContent: 'space-between', backgroundColor: "gray" }}>
+            <View style={{
+                flexDirection: "row",
+                alignItems: "center",
+                borderRadius:100,
+                borderWidth:5,
+                justifyContent: 'space-between',
+                backgroundColor: "red"
+            }}>
                 <TouchableOpacity onPress={() => {
 
                     navigation.navigate("Setting")
